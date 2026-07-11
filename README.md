@@ -94,6 +94,34 @@ over `Prop.numTests` cases from a given seed and returns a `result`
 (`Passed n` or `Failed { counterexample, seed, shrinks }`). `propTest` wraps
 a property as a `test` using the fixed `Prop.defaultSeed` for reproducibility.
 
+## Example
+
+`make example` builds and runs [`examples/demo.sml`](examples/demo.sml), which
+runs a direct `Prop.check`, then a suite of assertion tests and a property
+test through `run` (output is byte-identical under MLton and Poly/ML):
+
+```
+=== sml-test demo ===
+
+-- direct property check (Prop.check) --
+passed 100 cases
+
+-- suite run (assertions + a property test) --
+# Suite: arithmetic
+ok 1 - addition
+ok 2 - assertMsg
+ok 3 - assertNeq
+ok 4 - assertRaises
+ok 5 - assertNear
+# Suite: properties
+ok 6 - reverse twice is identity
+ok 7 - append length adds
+
+7 passed, 0 failed
+
+all passed? true
+```
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
