@@ -1,5 +1,7 @@
 # sml-test
 
+[![CI](https://github.com/sjqtentacles/sml-test/actions/workflows/ci.yml/badge.svg)](https://github.com/sjqtentacles/sml-test/actions/workflows/ci.yml)
+
 A small, dependency-free test framework for the `sjqtentacles` Standard ML
 libraries. It replaces the hand-rolled `Harness` that each library used to
 carry: tests are first-class values grouped into named suites, assertions
